@@ -5,6 +5,9 @@
 # @Project : PySODToolBox
 # @GitHub  : https://github.com/lartpang
 
+import numpy as np
+
+
 def cal_pr_mae_meanf(prediction, gt):
     assert prediction.dtype == np.uint8
     assert gt.dtype == np.uint8
