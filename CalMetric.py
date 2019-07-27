@@ -5,11 +5,7 @@
 # @Project : PySODToolBox
 # @GitHub  : https://github.com/lartpang
 
-import numpy as np
-
-
 def cal_pr_mae_meanf(prediction, gt):
-    # input should be np array with data type uint8
     assert prediction.dtype == np.uint8
     assert gt.dtype == np.uint8
     assert prediction.shape == gt.shape
@@ -33,7 +29,7 @@ def cal_pr_mae_meanf(prediction, gt):
     # MAE ##################################################################
     mae = np.mean(np.abs(prediction - hard_gt))
 
-    # meanf ################################################################
+    # MeanF ################################################################
     threshold_fm = 2 * prediction.mean()
     if threshold_fm > 1:
         threshold_fm = 1
@@ -60,7 +56,6 @@ def cal_pr_mae_meanf(prediction, gt):
         if tp == 0:
             precision.append(0)
             recall.append(0)
-            print(threshold)
         else:
             precision.append(tp / p)
             recall.append(tp / t)
@@ -68,6 +63,7 @@ def cal_pr_mae_meanf(prediction, gt):
     return precision, recall, mae, meanf
 
 
+# MaxF #############################################################
 def cal_maxf(ps, rs):
     assert len(ps) == 256
     assert len(rs) == 256
