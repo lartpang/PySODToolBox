@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019/7/18 上午9:54
 # @Author  : Lart Pang
-# @FileName: cal_fps.py
+# @FileName: CalFps.py
 # @Project : PySODToolBox
 # @GitHub  : https://github.com/lartpang
 
